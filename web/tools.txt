@@ -1,0 +1,2 @@
+https://github.com/ambionics/phpggc
+https://github.com/mpgn/Rails-doubletap-RCE
