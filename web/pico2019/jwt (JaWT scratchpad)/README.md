@@ -34,9 +34,9 @@ cd ../run
 Lần đầu sử dụng John, thử quăng cả đoạn jwt vào rồi cho chạy john với file text chứa jwt:  
 `./john jwt.john`     
 Kết quả là chờ 10p vẫn chưa ra được cái secret nào nếu dùng setting wordlist mặc định của JohnTheRipper (toàn mấy chữ tào lao ko có nghĩa)....      
-Sau khi tìm hiểu thì mình tìm ra được 1 wordlist khác có tên là rockyou.txt, lên google search rồi tải về rồi chạy thử với `--wordlist="rockyou.txt"`       
+Sau khi tìm hiểu thì mình tìm ra được 1 wordlist khác chứa các từ khóa thường dùng hơn có tên là rockyou.txt, lên google search tải về rồi chạy thử với option wordlist là rockyou.txt            
 `./john jwt.john --wordlist="rockyou.txt"`      
 Và nó lại nhanh vcl... vừa chạy là ra kết quả *ilovepico*   
-Sau đó mình quay lại trang https://jwt.io/ rồi tạo 1 jwt mới với secret này và payload là user: admin
+Sau đó mình quay lại trang https://jwt.io/ rồi tạo 1 jwt mới với secret này và payload là user: admin       
 Thay jwt này vào cookie, refresh lại trang, thế là ra flag UWU
 > picoCTF{jawt_was_just_what_you_thought_1ca14548}
