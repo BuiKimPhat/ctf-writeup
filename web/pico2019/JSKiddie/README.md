@@ -2,7 +2,7 @@
 *Newbie*
 
 ### Đề
-The image link appears broken... https://jupiter.challenges.picoctf.org/problem/17205 or http://jupiter.challenges.picoctf.org:17205
+> The image link appears broken... https://jupiter.challenges.picoctf.org/problem/17205 or http://jupiter.challenges.picoctf.org:17205
 
 ### Hint
 - This is only a JavaScript problem. (hint có ích vl XD)
