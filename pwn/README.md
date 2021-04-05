@@ -73,3 +73,8 @@ gdb.attach(r)
 - `r.interactive()`: tạo ra 1 shell ảo, liên tục nhận input từ client trong trường hợp chương trình liên tục yêu cầu input. Ví dụ như khi đã truy cập được shell `/bin/sh` thì có quyền liên tục nhập lệnh vào như khi tương tác với terminal, hoặc khi chương trình chạy vòng lặp vô tận mà mỗi vòng lặp có yêu cầu input...
 - Hàm `p64()` / `p32()`: chuyển đổi 1 giá trị nguyên/hexa sang dạng string các kí tự ascii (cả in được lẫn không in được) (gồm 8 bytes/ 4 bytes)
 
+## More
+- Package `ascii` cho linux: Hiển thị đầy đủ bảng các kí tự ascii và mã thập phân, thập lục phân của chúng.
+- Lệnh `man` trên linux: Hướng dẫn sử dụng đầy đủ của các hàm, lệnh.        
+`man man` để xem danh sách các trang hướng dẫn và chi tiết.     
+`man <số trang> <tên hàm/lệnh>` để xem hướng dẫn sử dụng của hàm/lệnh trong trang.
