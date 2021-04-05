@@ -33,12 +33,13 @@ file <đường dẫn file>
 - `b* <địa chỉ lệnh>`: đặt breakpoint tại địa chỉ lệnh, khi chương trình start/run thì tạm dừng ngay trước khi lệnh đó được thực hiện
 - `info br`: hiển thị thông tin tất cả các breakpoints
 - `del <id breakpoint>`: xóa breakpoint có id ?
-- `vmmap`: xem phạm vi địa chỉ ảo của các vùng nhớ **__trong lúc chạy__** chương trình
+- `vmmap`: xem phạm vi địa chỉ ảo của các vùng nhớ **__trong lúc chạy__** chương trình và các quyền rwx tương ứng.
 - `x/<tham số> <địa chỉ>`: xem giá trị của địa chỉ cho trước. Các tham số mình thường dùng: 
     - wx (word hexa): hiển thị dưới dạng thập lục phân với độ dài 1 word (4 bytes)
     - bx (byte hexa): hiển thị dưới dạng thập lục phân với độ dài 1 byte
     - 4i (4 instructions): hiển thị 4 dòng lệnh kể từ địa chỉ đã cho
 - `set $<thanh ghi>=<giá trị>`: set lại thanh ghi hiện thời trong lúc chạy chương trình thành 1 giá trị nào đó (có thể là địa chỉ nào đó). Ví dụ `set $eip=0x0804e408` thì sẽ set thanh ghi trỏ lệnh đến địa chỉ lệnh 0x0804e408, khi `next` thì chương trình sẽ nhảy đến lệnh có địa chỉ 0x0804e408 và tiếp tục thực thi từ đó.
+- `stack <số ngăn xếp>`: hiển thị bộ nhớ stack với số lượng ngăn xếp cho trước
 
 ## Sử dụng IDA PRO:
 Lúc mới vào lần đầu thì sẽ có nút lựa chọn **__New__**, nhấp vào đó rồi chọn loại file là __All files__, sau đó open file thực thi mà mình cần disassemble code. OK, Ok , OK...     
@@ -50,7 +51,7 @@ Trong IDA PRO, bạn có thể double-click vào 1 biến (màu xanh) để truy
 ```
 from pwn import *
 ```
-Tiếp theo, kết nối đến môi trường chạy chương trình cần khai thác:
+Tiếp theo, kết nối đến môi trường chạy chương trình cần khai thác:      
 __Nếu chương trình chạy trên remote server__:
 ```
 r = remote(<(string) địa chỉ của remote server>, <(int) port host chương trình trên server>)
