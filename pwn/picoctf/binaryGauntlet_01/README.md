@@ -480,4 +480,4 @@ Vì vậy mình sẽ dùng `dest_addr` có đến tận 7 bytes, tính thêm kí
 
 [Sử dụng công cụ pwntools](https://github.com/BuiKimPhat/ctf-writeup/tree/master/pwn#s%E1%BB%AD-d%E1%BB%A5ng-pwntools) để viết script kết nối với remote server, input các payload, nhận các output và lấy shell để tương tác tự do với remote server.    
 
-Chạy [file script exp.py](#) rồi `cat flag.txt` để lấy flag thôi chứ còn chần chờ gì nữa!   
+Chạy [file script exp.py](https://github.com/BuiKimPhat/ctf-writeup/blob/master/pwn/picoctf/binaryGauntlet_01/exp.py) rồi `cat flag.txt` để lấy flag thôi chứ còn chần chờ gì nữa!   
