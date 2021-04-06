@@ -4,8 +4,8 @@ Writeup các game trong mảng pwnable mình đã từng chơi qua từ beginner
 
 ## Bắt đầu
 Từ lúc mới chơi pwnable đến giờ, mình để ý các điều sau:
-- File thực thi chương trình trong linux thường có dạng ELF.        
-...Có thể kiểm tra định dạng file và 1 số thuộc tính của file bằng lệnh:
+- File thực thi chương trình trong linux thường có dạng ELF.              
+Có thể kiểm tra định dạng file và 1 số thuộc tính của file bằng lệnh:
 ```
 file <đường dẫn file>
 ```
@@ -13,9 +13,9 @@ file <đường dẫn file>
 - Tools:
     - **pwntools**: 1 thư viện pwn dành cho python, dùng để kết nối đến remote server, send và nhận payload, và 1 số chức năng khác phục vụ cho quá trình khai thác. Thường dùng để viết script khai thác lỗ hổng của chương trình chạy trên server sau khi đã tìm kiếm và phân tích xong lỗ hổng. [Github](https://github.com/Gallopsled/pwntools)
     - **GDB-peda**: phiên bản nâng cấp của gdb, dùng để debug code trong file thực thi + 1 số tính năng khác phục vụ cho việc khai thác lỗ hổng phần mềm. [Github](https://github.com/longld/peda)
-    - **IDA Pro**: 1 công cụ Disassembler cho phép xem code assembly của file thực thi và chuyển chúng thàng mã giả C cho dễ đọc (phiên bản Pro). [Drive](https://drive.google.com/drive/folders/1-OPepikWwL2jYlkXgCq3ZmEl6mqXnvMU?usp=sharing)     
-    ...Vì phiên bản IDA mình dùng ở link trên là cho HĐH Windows nên thường mình sẽ cài thêm **Wine** vào Ubuntu để chạy được IDA.        
-    ...Sau khi cài IDA, sẽ có 2 phiển bản IDA trên hệ thống là IDA 32bit và IDA 64bit. Chú ý kiểm tra file thực thi mấy bit trước khi khởi động IDA.
+    - **IDA Pro**: 1 công cụ Disassembler cho phép xem code assembly của file thực thi và chuyển chúng thàng mã giả C cho dễ đọc (phiên bản Pro). [Drive](https://drive.google.com/drive/folders/1-OPepikWwL2jYlkXgCq3ZmEl6mqXnvMU?usp=sharing)       
+    Vì phiên bản IDA mình dùng ở link trên là cho HĐH Windows nên thường mình sẽ cài thêm **Wine** vào Ubuntu để chạy được IDA.          
+    Sau khi cài IDA, sẽ có 2 phiển bản IDA trên hệ thống là IDA 32-bit và IDA 64-bit. Chú ý kiểm tra file thực thi mấy bit trước khi khởi động IDA.
 
 ## Sử dụng GDB-peda
 - `pdis <tên hàm>`: hiển thị các lệnh có trong hàm đó. Lúc mới debug thì thường dùng `pdis main` để đặt breakpoints tại các hàm khác trong main cho dễ debug.
@@ -40,6 +40,9 @@ file <đường dẫn file>
     - 4i (4 instructions): hiển thị 4 dòng lệnh kể từ địa chỉ đã cho
 - `set $<thanh ghi>=<giá trị>`: set lại thanh ghi hiện thời trong lúc chạy chương trình thành 1 giá trị nào đó (có thể là địa chỉ nào đó). Ví dụ `set $eip=0x0804e408` thì sẽ set thanh ghi trỏ lệnh đến địa chỉ lệnh 0x0804e408, khi `next` thì chương trình sẽ nhảy đến lệnh có địa chỉ 0x0804e408 và tiếp tục thực thi từ đó.
 - `stack <số ngăn xếp>`: hiển thị bộ nhớ stack với số lượng ngăn xếp cho trước
+- Một số thanh ghi:
+    - **RSP** (64-bit) / **ESP** (32-bit): Stack Pointer, chứa địa chỉ trên cùng stack.
+    - **RIP** (64-bit) / **EIP** (32-bit): Instruction Pointer, chứa địa chỉ lệnh tiếp theo cần thực hiện.
 
 ## Sử dụng IDA PRO:
 Lúc mới vào lần đầu thì sẽ có nút lựa chọn **__New__**, nhấp vào đó rồi chọn loại file là __All files__, sau đó open file thực thi mà mình cần disassemble code. OK, Ok , OK...     
