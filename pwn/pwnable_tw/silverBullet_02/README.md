@@ -1,4 +1,4 @@
-# Silver Bullet [200 pts]
+# [Silver Bullet [200 pts]](https://pwnable.tw/challenge/#6)
 **__ret2libc__**
 
 > Please kill the werewolf with silver bullet!      
