@@ -192,7 +192,8 @@ Vì đây là địa chỉ ảo nên có thể mỗi máy lúc thực thi sẽ m
 Với GDB-peda, những hàm nguy hiểm có thể được sử dụng để khai thác trong những bài dễ sẽ được bôi màu đỏ. Trong này có 3 hàm:
 - fgets
 - printf
-- strcpy
+- strcpy    
+
 Trở về với vấn đề chính, khai thác lỗ hổng chương trình NX bằng shellcode. Vậy làm thế nào để có thể thực thi được shellcode và chiếm lấy shell của server? Câu trả lời là sử dụng kĩ thuật ret2shellcode trong ROP (Return Oriented Programming).      
 
 Sơ lược về kĩ thuật ret2shellcode:
