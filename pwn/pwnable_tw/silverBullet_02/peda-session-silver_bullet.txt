@@ -1,4 +1,5 @@
-tbreak main
-
-
+break * 0x08048a19
+break * 0x08048834
+break * 0x080488fb
+break * 0x08048924
 
