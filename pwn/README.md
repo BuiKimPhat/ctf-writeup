@@ -22,9 +22,9 @@ file <đường dẫn file>
 - `print <tên hàm>`: in địa chỉ gốc của hàm
 - `checksec`: Xem các chế độ security của file thực thi bao gồm:
     - Canary: Lỗi tràn bộ đệm (disabled)
-    - NX (Non-executable): Không được thực thi shellcode trong chương trình (enabled)
-    - Relro: Cấp phát địa chỉ động (FULL: toàn bộ vùng nhớ đều cấp phát động, Partial: chỉ 1 số vùng được cấp phát động ví dụ như Stack)
-    - PIE
+    - NX (Non-Executable): Không được thực thi shellcode trong chương trình (enabled)
+    - RELRO (RELocation Read-Only): Đặt bảng GOT (Global Offset Table) trước vùng nhớ BSS để phòng ngừa việc ghi đè GOT bằng việc ghi tràn bộ đệm của biến toàn cục (Partial); Khiến bảng GOT chỉ có thể đọc (read-only), không thể thực hiện ghi đè lên GOT 1 hàm hay 1 ROPgadget nào cả.
+    - PIE: Vùng nhớ code luôn không đổi địa chỉ. (disabled)
     - FORTIFY
 - `start`: chạy chương trình và tạm dừng trước main, sau khi setup các thanh ghi, bộ nhớ xong.
 - `run` / `r`: trực tiếp chạy luôn chương trình như lúc thực thi chương trình bình thường, không tạm dừng trước main như `start`
