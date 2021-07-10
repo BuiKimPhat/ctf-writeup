@@ -24,7 +24,7 @@ file <đường dẫn file>
     - Canary: Lỗi tràn bộ đệm (disabled)
     - NX (Non-Executable): Không được thực thi shellcode trong chương trình (enabled)
     - RELRO (RELocation Read-Only): Đặt bảng GOT (Global Offset Table) trước vùng nhớ BSS để phòng ngừa việc ghi đè GOT bằng việc ghi tràn bộ đệm của biến toàn cục (Partial); Khiến bảng GOT chỉ có thể đọc (read-only), không thể thực hiện ghi đè lên GOT 1 hàm hay 1 ROPgadget nào cả.
-    - PIE: Vùng nhớ code luôn không đổi địa chỉ. (disabled)
+    - PIE (Position Independent Executable): Vùng nhớ code luôn không đổi địa chỉ. (disabled)
     - FORTIFY
 - `start`: chạy chương trình và tạm dừng trước main, sau khi setup các thanh ghi, bộ nhớ xong.
 - `run` / `r`: trực tiếp chạy luôn chương trình như lúc thực thi chương trình bình thường, không tạm dừng trước main như `start`

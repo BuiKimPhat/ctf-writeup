@@ -1,7 +1,7 @@
 # ret2libc
 
 from pwn import *
-
+# r = remote("45.77.245.244",5001)
 r = remote("34.94.172.42", 2021)
 # r = process("./bof1")
 # gdb.attach(r)
