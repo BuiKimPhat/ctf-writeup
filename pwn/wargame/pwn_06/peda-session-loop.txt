@@ -1,6 +1,2 @@
-break * 0x00000000004007b3
-
-
-
-
+tbreak main
 

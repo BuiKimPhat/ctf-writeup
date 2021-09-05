@@ -1,3 +1,9 @@
 tools/
 
 mydocs/
+
+.gdb_history
+
+peda-session*.txt
+
+.idb
