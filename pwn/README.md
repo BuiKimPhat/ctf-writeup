@@ -82,6 +82,18 @@ gdb.attach(r)
 `man man` để xem danh sách các trang hướng dẫn và chi tiết.     
 `man <số trang> <tên hàm/lệnh>` để xem hướng dẫn sử dụng của hàm/lệnh trong trang.
 
-- Các shellcode `execve("/bin//sh")` trong trường hợp NX disable:
+- Các shellcode `execve("/bin//sh")` trong trường hợp NX disabled:
     - 32 bit: `\x31\xC0\x50\x68\x2F\x2F\x73\x68\x68\x2F\x62\x69\x6E\x31\xDB\x31\xC9\x31\xD2\x89\xE3\x83\xC0\x0B\xCD\x80`
     - 64 bit: ``
+
+## Các kĩ thuật khai thác / lỗ hổng bảo mật mà mình đã học được
+
+- Pwn
+    - printf format string
+    - Stack overflow (Canary disabled)
+    - GOT overwrite (Canary enabled)
+    - ret2shellcode (NX disabled)
+    - ret2libc, ROPgadget (NX enabled)
+
+- Web
+    - SQL Injection

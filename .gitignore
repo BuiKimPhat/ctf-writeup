@@ -7,3 +7,6 @@ mydocs/
 peda-session*.txt
 
 .idb
+.i64
+
+.zip
