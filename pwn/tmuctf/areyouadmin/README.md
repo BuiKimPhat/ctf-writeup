@@ -164,7 +164,7 @@ password - 64 bytes - username - 76 bytes - v10 - 4 bytes - v11 - 4 bytes - v12 
 
 - Viết payload:     
 Chương trình cho phép ta nhập input 2 lần, lần đầu chứa ở username, lần sau chứa ở password. Ta có thể lợi dụng buffer overflow ở username để viết các kí tự offset cho tràn đến các địa chỉ của các biến đằng sau để ghi giá trị của các biến sau. 
-    - payload1: `username + "\x00"*(76 - len(username)) + p32(v14) + p32(v13) + p32(v12) + p32(v11) + p32(v10)` (giá trị của các biến trong payload1 đã được nêu ở phần trên)
+    - payload1: `username + "\x00"*(76 - len(username)) + p32(v10) + p32(v11) + p32(v12) + p32(v13) + p32(v14)` (giá trị của các biến trong payload1 đã được nêu ở phần trên)
     Ta có thể thấy từ username chỉ cần nhập 76 kí tự thì sẽ nhập tiếp được giá trị của v10,...      
     Ở đây, mình dùng kí tự null `\x00` để làm kí tự offset tràn đến các địa chỉ sau vì hàm `strcmp` chỉ so sánh 2 chuỗi cho đến khi gặp kí tự null. Nếu muốn chèn kí tự khác thì chuỗi kí tự chèn phải bắt đầu bằng kí tự null để hàm có thể so sánh thành công chuỗi username chứ không đem các kí tự sau đi so sánh. 
     Mỗi biến v?? chỉ rộng 4 bytes nên mình dùng hàm `p32` của pwntool để chuyển giá trị của nó thành chuỗi 4 bytes kí tự.
