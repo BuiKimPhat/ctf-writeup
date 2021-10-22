@@ -7,5 +7,3 @@
 ### Hint
 - Tools can be helpful, but you may need to look around for yourself. (thanks for nothing :( )
 - Remember, in CTF problems, if something seems weird it probably means something... (again, thanks for nothing :(( )
-
-## Gỉai

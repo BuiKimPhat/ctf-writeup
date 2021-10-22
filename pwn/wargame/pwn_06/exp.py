@@ -13,6 +13,7 @@ if debug:
 #     system_offset = 0x0000000000045390
 else:
     r = remote("192.168.0.130",9999)
+    # r = remote("103.229.41.18", 5556)
     offset_after_hook = 0x00000000003ed8e0
     system_offset = 0x000000000004f550
 
